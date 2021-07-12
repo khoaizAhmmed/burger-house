@@ -1,0 +1,51 @@
+body{
+  background-image: url('../img/home-background.jpg');
+  width: auto;
+  max-height: 90vh;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+h1{
+  font-size:80px;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow: 2px 4px #fcfbfb;
+  color: #3d2514;
+}
+p{
+  font-size:60px;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow: 2px 4px #fcfbfb;
+  margin-top: -60px;
+  color: #3d2514;
+
+}
+h4{
+  border: 3px dashed black;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+}
+
+#home-section{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.header-img img{
+  width: auto;
+  height: 90%;
+  margin-top: -40px;
+  margin-right: -90px;
+  z-index: 10;
+}
+.order-btn{
+  padding: 10px 20px;
+  background-color: red;
+  color: aliceblue;
+  margin:0 0 0 50px;
+  font-size: 30px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', cursive;
+  cursor: pointer;
+  border-radius: 3px;
+}

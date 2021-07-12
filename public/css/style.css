@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&display=swap');
+/* 
+font-family: 'Alfa Slab One', cursive;
+*/
+body{
+  margin: 20px 40px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-family: 'Bebas Neue', cursive; 
+
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  cursor: pointer;
+  z-index: 1;
+}
+nav .menu li{
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  
+}
+nav .menu li a{
+  text-decoration: none;
+  color: black;
+}

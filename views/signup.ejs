@@ -1,0 +1,44 @@
+<%- include('partials/header'); -%>
+  <link rel="stylesheet" type="text/css" href="/css/signup.css">
+
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="box-root  flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1>sign up</h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">Sign up to your account</span>
+              <form action="/signup" method="POST"  id="add-user-form">
+                <div class=" field padding-bottom--24 ">
+                  <label for="name">Name</label>
+                  <input class="<%=error.name ? 'error' : '' %>" type="text" name="name" value="<%= value.name ? value.name :''%>" >
+                  <p style="color: red;padding:2px;" > <%= error.name && error.name %>  </p>
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="email">Email</label>
+                  <input class="<%=error.email ? 'error' : '' %>" type="email" name="email"value="<%= value.email ? value.email :''%>">
+                  <p style="color: red;padding:2px;" > <%= error.email && error.email %>  </p>
+                </div>
+                  <div class="field padding-bottom--24">
+                    <label for="password">Password</label>
+                    <input class="<%=error.password ? 'error' : '' %>" type="password" name="password" value="<%= value.password ? value.password :''%>">
+                    <p style="color: red;padding:2px;" > <%= error.password && error.password %>  </p>
+                  </div>
+                
+                <div class="field padding-bottom--24 btn">
+                  <input type="submit" value="Continue">
+                </div>
+              </form>
+              <div class="footer-link">
+                <span> have an account? <a href="/login">Log in</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include('partials/footer'); -%>
