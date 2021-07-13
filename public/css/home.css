@@ -5,13 +5,13 @@ body{
   text-transform: uppercase;
   overflow: hidden;
 }
-h1{
+.head-line{
   font-size:80px;
   font-family: 'Alfa Slab One', cursive;
   text-shadow: 2px 4px #fcfbfb;
   color: #3d2514;
 }
-p{
+.head-line-para{
   font-size:60px;
   font-family: 'Alfa Slab One', cursive;
   text-shadow: 2px 4px #fcfbfb;
@@ -19,7 +19,7 @@ p{
   color: #3d2514;
 
 }
-h4{
+.head-border-box{
   border: 3px dashed black;
   font-size: 18px;
   padding: 8px;

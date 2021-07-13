@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/cart.css">
   <link rel="stylesheet" href="/css/toastify.css">
-  <script src="/js/toastify.js"></script>
   <title><%= title %></title>
 </head>
 <body>
@@ -22,6 +22,7 @@
       <li> Welcome,  <%user.map(u=>{%>
             <%=u.user_name %>
             <% })  %></li>
+            <li onclick="openBox()" >cart</li>
       <li> <a href="/logout"> log out</a> </li>
       <% } else { %> 
       <li> <a href="/login"> login</a> </li>
@@ -31,4 +32,6 @@
 
   </div>
 </nav>
+
+<%- include('./cart.ejs'); -%>
   
