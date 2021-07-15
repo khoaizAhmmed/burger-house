@@ -5,6 +5,7 @@ function decorateHtmlResponse(pageTitle) {
     res.locals.loggedInUser = {};
     res.locals.errors = {};
     res.locals.data = {};
+    res.locals.stripePublicKey = {};
     next();
   };
 }

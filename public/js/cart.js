@@ -128,7 +128,7 @@ const stripeHandler = StripeCheckout.configure({
       })
     }
 
-    fetch('/purchase', {
+    fetch('/order-purchase', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ const stripeHandler = StripeCheckout.configure({
 // Purchase clicked
 function purchaseClicked() {
   const priceElement = document.getElementsByClassName('cart-total-price')[0]
-  const price = parseFloat(priceElement.innerText.replace('$', ''))
+  const price = parseFloat(priceElement.innerText.replace('$', '')) * 100
   stripeHandler.open({
     amount: price,
   })
