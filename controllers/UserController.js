@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
+/* eslint-disable consistent-return */
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { validationResult } = require('express-validator')
-const Toastify = require('toastify-js')
+
 const Users = require('../models/Users')
 
-const maxAge = 3 * 24 * 60 * 60;
+const maxAge = 60 * 60 * 1000;
 const UserController = {
   getSignup: async (req, res) => {
     res.render('signup', { error: {}, value: {} })
@@ -19,11 +21,6 @@ const UserController = {
     try {
       const hashPassword = await bcrypt.hash(password, 10)
       await Users.signup(email, name, hashPassword)
-      await Toastify({
-        text: 'This is a toast',
-        duration: 3000,
-        backgroundColor: 'linear-gradient(to right, #00b09b, #96c93d)',
-      }).showToast()
     } catch (err) {
       console.log(err)
     }
@@ -46,7 +43,7 @@ const UserController = {
             userName,
             userMail,
           }, process.env.JWT_SECRET, { expiresIn: '1h' })
-          res.cookie('jwt', token, { maxAge: maxAge * 1000 });
+          res.cookie('jwt', token, { maxAge });
 
           res.redirect('/')
         } else {

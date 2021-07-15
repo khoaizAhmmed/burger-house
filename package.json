@@ -29,6 +29,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5",
     "stripe": "^8.161.0",
+    "sweetalert2": "^11.0.18",
     "toastify-js": "^1.11.0"
   }
 }

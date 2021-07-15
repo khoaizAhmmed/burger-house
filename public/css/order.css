@@ -1,7 +1,7 @@
 body{
   text-align: center;
 }
-h1{
+.order-title{
   font-family: 'Alfa Slab One', cursive;
   color: #3d2514;
 }
@@ -22,7 +22,13 @@ h1{
   font-family: 'Bebas Neue', cursive;
   cursor: pointer;
   border-radius: 3px;
+  border: 0;
 }
 .order-card{
   padding: 20px;
+}
+.come-soon{
+  text-align: center;
+  padding: 20px;
+  border: 1px dotted rgb(78, 31, 31);
 }

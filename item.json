@@ -1,0 +1,25 @@
+{
+  "burger":[
+    {
+      "id": 1,
+      "name": "Arif Burger",
+      "price": 6.69,
+      "details":"BEEF MEET ,ONION ,EXTRA MAYONNAISE, LATUS ,TOMATO ",
+      "img": "burger-arif.png"
+    },
+    {
+      "id": 2,
+      "name": "JS Burger",
+      "price": 8.69,
+      "details":"DOUBLE BEEF MEET ,CHILLI SAUCE, ONION , LATUS, TOMATO  ",
+      "img": "burger-pro.png"
+    },
+    {
+      "id": 2,
+      "name": "Rubel Burger",
+      "price": 6.69,
+      "details":"BEEF MEET ,ONION ,EXTRA CHILLI, LATUS ,TOMATO ",
+      "img": "burger-arif.png"
+    }
+  ]
+}

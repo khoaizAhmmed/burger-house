@@ -1,23 +1,17 @@
 <%- include('partials/header'); -%>
 <link rel="stylesheet" href="../css/order.css">
-<h1>Choose & Enjoy</h1>
+<h1 class="order-title">Choose & Enjoy</h1>
 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim excepturi perspiciatis tenetur commodi nisi magnam repellat. Maxime voluptate dicta ea tempora ut amet quisquam iste qui ipsa dolorum quasi natus expedita sapiente fugit quae cum exercitationem ipsam, veniam nulla deleniti, in cupiditate id provident! Quisquam reiciendis perspiciatis sed numquam molestiae.</p>
 <div class="order-burger">
-  <div class="order-card">
-    <img src="../img/burger-arif.png" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, delectus.</p>
-    <a class="order-btn" href="/order">Oder now</a>
+  <% items.burger.map(item=>{ %>  
+  <div class="order-card" data-item-id=<%= item.id  %>  >
+    <img class="order-item-img" src="../img/<%= item.img %>" alt="">
+    <h2 class="order-item-title"><%= item.name%></h2>
+    <p class="order-item-details"><%= item.details %></p>
+    <h2 class="order-item-price">$<%= item.price %></h2>
+    <button class="order-btn" >Oder now</button>
   </div>
-  <div class="order-card">
-    <img src="../img/burger-pro.png" alt="">
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, sequi?</p>
-    <a class="order-btn" href="/order">Oder now</a>
-  </div>
-  <div class="order-card">
-    <img src="../img/burger-arif.png" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, est.</p>
-    <a class="order-btn" href="/order">Oder now</a>
-  </div>
+<% })%>
 </div>
-
+<h1 class="come-soon" >Coming Soon More Burger 🙂</h1>
 <%- include('partials/footer'); -%>
