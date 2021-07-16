@@ -10,7 +10,7 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign up to your account</span>
+              <span class="padding-bottom--15 span-head">Sign up to your account</span>
               <form action="/signup" method="POST"  id="add-user-form">
                 <div class=" field padding-bottom--24 ">
                   <label for="name">Name</label>
@@ -41,4 +41,30 @@
       </div>
     </div>
   </div>
+
 <%- include('partials/footer'); -%>
+
+<script >
+  let auth =  '<%= auth %>';
+  let signupFail =  '<%= signupFail %>';
+
+ if(auth==="true" ){
+  Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Signup Successful',
+  showConfirmButton: false,
+  timer: 2500
+})
+setTimeout(function(){ window.location='/' }, 3000);
+ }
+ if(signupFail==="true" ){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'This email already exist',
+      footer: '<a href="/login">Have an account?</a>'
+    })
+  }
+
+</script>

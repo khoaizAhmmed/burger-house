@@ -10,5 +10,14 @@ const signupValidator = [
 
   check('password').isLength({ min: 1 }).withMessage('Password is required'),
 ];
+const loginValidator = [
+  check('email')
+    .isLength({
+      min: 1,
+    })
+    .withMessage('email is required'),
 
-module.exports = { signupValidator }
+  check('password').isLength({ min: 1 }).withMessage('Password is required'),
+];
+
+module.exports = { signupValidator, loginValidator }

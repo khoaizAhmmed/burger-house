@@ -6,6 +6,10 @@ function decorateHtmlResponse(pageTitle) {
     res.locals.errors = {};
     res.locals.data = {};
     res.locals.stripePublicKey = {};
+    res.locals.error = {};
+    res.locals.value = {};
+    res.locals.auth = false;
+    res.locals.signupFail = false;
     next();
   };
 }

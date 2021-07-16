@@ -12,16 +12,17 @@
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
       <div class="box-root  flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1><a href="http://blogs.stackfindover.com/" rel="dofollow">log in</a></h1>
+          <h1><a href="/login" rel="dofollow">log in</a></h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Log in to your account</span>
+              <span class="padding-bottom--15 span-head">Log in to your account</span>
               <form action="/login" method="POST" id="stripe-login">
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>
-                  <input type="email" name="email">
+                  <input class="<%=error.email ? 'error' : '' %>" type="email" name="email" value="<%= value.email ? value.email :''%>">
+                  <p style="color: red;padding:2px;" > <%= error.email && error.email %>  </p>
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -30,7 +31,8 @@
                       <a href="#">Forgot your password?</a>
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input class="<%=error.password ? 'error' : '' %>" type="password" name="password">
+                  <p style="color: red;padding:2px;" > <%= error.password && error.password %>  </p>
                 </div>
                 <div class="field padding-bottom--24">
                   <input type="submit" value="Continue">
@@ -48,4 +50,18 @@
 </body>
 </html>
 
-<%- include('partials/footer'); -%>
+
+  <%- include('partials/footer'); -%>
+  
+<script >
+  let auth =  '<%= auth %>';
+  console.log(auth)
+  if(auth==="true" ){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Authentication failed',
+      footer: '<a href="/signup">Don\'t have an account?</a>'
+    })
+  }
+</script>
