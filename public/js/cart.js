@@ -89,7 +89,7 @@ function addItemToCart(id, title, price, img) {
   <td class="cart-item-title">${title}</td>
   <td class="cart-price">${price}</td>
   <td class="cart-quantity-input"> <button class="quantity-sub" >-</button> <input type="text" value="1"> <button class="quantity-add" >+</button> </td>
-  <td><button class="danger-button">remove</button></td>`
+  <td><input class='danger-button' type="image" width="35" height="35" src="../../img/icons/trash.svg"></td>`
   cartContainer.innerHTML = cartContent
   cartItems.append(cartContainer)
   cartContainer.getElementsByClassName('danger-button')[0].addEventListener('click', removeCartItem)
@@ -119,7 +119,7 @@ const stripeHandler = StripeCheckout.configure({
     const cartRows = cartItemContainer.getElementsByClassName('cart-row')
     for (let i = 0; i < cartRows.length; i++) {
       const cartRow = cartRows[i]
-      const quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+      const quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0].getElementsByTagName('input')[0]
       const quantity = quantityElement.value
       const id = cartRow.dataset.itemId
       items.push({
@@ -139,13 +139,18 @@ const stripeHandler = StripeCheckout.configure({
         items,
       }),
     }).then((res) => res.json()).then((data) => {
-      alert(data.message)
+      Swal.fire({
+        icon: 'success',
+        title: data.message,
+      })
+      closeBox()
       const cartItems = document.getElementsByClassName('cart-items')[0]
       while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
       }
       updateCartTotal()
     }).catch((error) => {
+      // eslint-disable-next-line no-console
       console.error(error)
     })
   },

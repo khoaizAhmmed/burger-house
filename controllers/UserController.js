@@ -38,6 +38,7 @@ const UserController = {
       const userName = user[0].user_name
       if (user) {
         const isValidPassword = await bcrypt.compare(req.body.password, userPassword)
+        console.log(isValidPassword)
         if (isValidPassword) {
           const token = jwt.sign({
             userName,

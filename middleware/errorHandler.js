@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const createErrors = require('http-errors')
 
 // 404 not found
