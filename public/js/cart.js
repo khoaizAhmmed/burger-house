@@ -85,7 +85,7 @@ function addItemToCart(id, title, price, img) {
   }
   const cartContent = `
   <td class="cart-item-img"> 
-  <img src="../${img}" width="50px" height="50px" alt="" srcset=""> </td>
+  <img src="../img/${img}" width="50px" height="50px" alt="" srcset=""> </td>
   <td class="cart-item-title">${title}</td>
   <td class="cart-price">${price}</td>
   <td class="cart-quantity-input"> <button class="quantity-sub" >-</button> <input type="text" value="1"> <button class="quantity-add" >+</button> </td>
@@ -103,7 +103,11 @@ function addToCartClicked(event) {
   const orderItem = button.parentElement
   const title = orderItem.getElementsByClassName('order-item-title')[0].innerText
   const price = orderItem.getElementsByClassName('order-item-price')[0].innerText
-  const imageSrc = orderItem.getElementsByClassName('order-item-img')[0].src
+  const image = orderItem.getElementsByClassName('order-item-img')[0].src
+  // eslint-disable-next-line no-useless-escape
+  const regex = /(?:[^/][\d\w\.]+)+$/
+  const imageName = image.match(regex)
+  const imageSrc = imageName[0]
   const id = orderItem.dataset.itemId
   addItemToCart(id, title, price, imageSrc)
   updateCartTotal()
