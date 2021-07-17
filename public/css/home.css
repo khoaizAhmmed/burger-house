@@ -61,3 +61,6 @@ body{
 .credit-home a:hover{
   text-decoration: none !important;
 }
+.footer-none{
+  display: none;
+}
